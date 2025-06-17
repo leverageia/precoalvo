@@ -3,16 +3,37 @@ from flask import Flask, render_template_string, request
 app = Flask(__name__)
 
 def obter_precos_alvo(ticker):
-    # Dados simulados para demonstração — substitua por scraping ou API real
     dados = {
         "BBAS3": [
             {"fonte": "XP Investimentos", "preco_alvo": 41.00, "data": "11/04/2025"},
             {"fonte": "BTG Pactual", "preco_alvo": 35.00, "data": "23/01/2025"},
             {"fonte": "Genial Analisa", "preco_alvo": 34.00, "data": "2025"},
-            {"fonte": "Investing.com (consenso)", "preco_alvo": 30.63, "data": "2025"},
-            {"fonte": "UBS BB", "preco_alvo": 36.00, "data": "2025"},
-            {"fonte": "Santander", "preco_alvo": 33.00, "data": "2025"},
-            {"fonte": "Goldman Sachs", "preco_alvo": 32.50, "data": "2025"}
+        ],
+        "PETR4": [
+            {"fonte": "BTG Pactual", "preco_alvo": 45.00, "data": "2025"},
+            {"fonte": "Itaú BBA", "preco_alvo": 43.50, "data": "2025"},
+            {"fonte": "Credit Suisse", "preco_alvo": 40.00, "data": "2025"},
+        ],
+        "VALE3": [
+            {"fonte": "XP Investimentos", "preco_alvo": 72.00, "data": "2025"},
+            {"fonte": "Bradesco BBI", "preco_alvo": 68.00, "data": "2025"},
+            {"fonte": "Safra", "preco_alvo": 70.00, "data": "2025"},
+        ],
+        "ITUB4": [
+            {"fonte": "Santander", "preco_alvo": 34.00, "data": "2025"},
+            {"fonte": "BTG Pactual", "preco_alvo": 36.00, "data": "2025"},
+        ],
+        "BBDC4": [
+            {"fonte": "BTG Pactual", "preco_alvo": 27.50, "data": "2025"},
+            {"fonte": "Goldman Sachs", "preco_alvo": 28.00, "data": "2025"},
+        ],
+        "MGLU3": [
+            {"fonte": "XP Investimentos", "preco_alvo": 3.20, "data": "2025"},
+            {"fonte": "BTG Pactual", "preco_alvo": 4.00, "data": "2025"},
+        ],
+        "ABEV3": [
+            {"fonte": "Itaú BBA", "preco_alvo": 17.00, "data": "2025"},
+            {"fonte": "XP Investimentos", "preco_alvo": 18.50, "data": "2025"},
         ]
     }
     return dados.get(ticker.upper(), [])
