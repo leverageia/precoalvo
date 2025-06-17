@@ -14,7 +14,6 @@ def obter_precos_alvo(ticker):
             {"fonte": "Santander", "preco_alvo": 33.00, "data": "2025"},
             {"fonte": "Goldman Sachs", "preco_alvo": 32.50, "data": "2025"}
         ]
-        # Pode adicionar outros tickers aqui
     }
     return dados.get(ticker.upper(), [])
 
